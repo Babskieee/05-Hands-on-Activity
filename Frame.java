@@ -4,7 +4,6 @@ import java.awt.*;
 public class Frame extends JFrame {
 
     JButton btn;
-    JLabel lbl;
     JTextField fName, lName, mName, uEmail;
     JPanel inputPanel;
     
@@ -17,22 +16,25 @@ public class Frame extends JFrame {
         this.setLayout(null);
         this.setSize(500,500);
 
-        //Label
-        lbl = new JLabel("Given Name: ");
-        lbl.setBounds(100, 100, 100, 50);
-        inputPanel = new JPanel(new GridLayout(5, 2, 10, 10));
+        inputPanel = new JPanel(new GridLayout(4, 2, 10, 10));
         inputPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
-
-        fName = new JTextField();
-        fName.add(new JLabel("Given Name:"));
-        
+        inputPanel.add(new JLabel("Given Name:"));
+        inputPanel.add(fName = new JTextField());
+        inputPanel.add(new JLabel("Middle Name:"));
+        inputPanel.add(mName = new JTextField());
+        inputPanel.add(new JLabel("Last Name:"));
+        inputPanel.add(lName = new JTextField());
+        inputPanel.add(new JLabel("Email:"));
+        inputPanel.add(uEmail = new JTextField());
+        inputPanel.setBounds(50, 50, 400, 200);
 
         //Button
         btn = new JButton("Submit");
-        btn.setBounds(190, 350, 100, 50);
-        
+        btn.setBounds(190, 300, 100, 50);
 
-        this.add(lbl);
+
+
+        this.add(inputPanel);
         //Adds button
         this.add(btn);
 
