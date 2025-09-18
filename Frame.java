@@ -19,6 +19,7 @@ public class Frame extends JFrame {
         //Label
         lbl = new JLabel("Hello World");
         lbl.setBounds(100, 100, 100, 50);
+
         
 
         //Button
@@ -26,6 +27,7 @@ public class Frame extends JFrame {
         btn.setBounds(190, 350, 100, 50);
         
 
+        this.add(lbl);
         //Adds button
         this.add(btn);
 
