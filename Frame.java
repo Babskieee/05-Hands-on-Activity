@@ -13,7 +13,9 @@ public class Frame extends JFrame {
         //Main Frame
         this.setTitle("05 Hands-on Activity");
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        this.setLayout(null);
         this.setSize(500,500);
+        
 
         //Button
         btn = new JButton("Submit");
@@ -25,5 +27,7 @@ public class Frame extends JFrame {
 
         //Whole form is visible
         this.setVisible(true);
+
+        
     }
 }
