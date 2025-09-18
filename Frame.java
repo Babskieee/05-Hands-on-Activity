@@ -1,11 +1,13 @@
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JTextField;
 
 public class Frame extends JFrame {
 
     JButton btn;
     JLabel lbl;
+    JTextField fName, lName, mName, uEmail;
     
     Frame(){
         this.setResizable(false);
@@ -19,7 +21,7 @@ public class Frame extends JFrame {
         //Label
         lbl = new JLabel("Hello World");
         lbl.setBounds(100, 100, 100, 50);
-
+        lbl.add(new JLabel("Given Name:"));
         
 
         //Button
