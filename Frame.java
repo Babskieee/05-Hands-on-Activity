@@ -15,6 +15,10 @@ public class Frame extends JFrame {
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setLayout(null);
         this.setSize(500,500);
+
+        //Label
+        lbl = new JLabel("Hello World");
+        lbl.setBounds(100, 100, 100, 50);
         
 
         //Button
