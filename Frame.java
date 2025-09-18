@@ -25,7 +25,8 @@ public class Frame extends JFrame {
         lbl = new JLabel("Given Name: ");
         lbl.setBounds(100, 100, 100, 50);
         inputPanel= new JPanel(new GridLayout(5, 2, 10, 10));
-        
+        inputPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+
         fName = new JTextField();
         fName.add(new JLabel("Given Name:"));
         
