@@ -1,6 +1,8 @@
+import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 public class Frame extends JFrame {
@@ -8,6 +10,7 @@ public class Frame extends JFrame {
     JButton btn;
     JLabel lbl;
     JTextField fName, lName, mName, uEmail;
+    JPanel inputPanel;
     
     Frame(){
         this.setResizable(false);
@@ -19,9 +22,12 @@ public class Frame extends JFrame {
         this.setSize(500,500);
 
         //Label
-        lbl = new JLabel("Hello World");
+        lbl = new JLabel("Given Name: ");
         lbl.setBounds(100, 100, 100, 50);
-        lbl.add(new JLabel("Given Name:"));
+        inputPanel= new JPanel(new GridLayout(5, 2, 10, 10));
+        
+        fName = new JTextField();
+        fName.add(new JLabel("Given Name:"));
         
 
         //Button
