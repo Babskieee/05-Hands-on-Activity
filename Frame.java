@@ -7,7 +7,7 @@ public class Frame extends JFrame {
     JButton btn;
     JTextField fName, lName, mName, uEmail;
     JPanel inputPanel;
-    Font myFont = new Font("Arial", Font.PLAIN, 14); // global font
+    Font myFont = new Font("Arial", Font.PLAIN, 16); // global font
 
     Frame(){
         this.setResizable(false);
