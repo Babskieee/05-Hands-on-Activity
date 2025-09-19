@@ -7,7 +7,8 @@ public class Frame extends JFrame {
     JButton btn;
     JTextField fName, lName, mName, uEmail;
     JPanel inputPanel;
-    
+    Font myFont = new Font("Arial", Font.PLAIN, 14); // global font
+
     Frame(){
         this.setResizable(false);
 
@@ -32,9 +33,13 @@ public class Frame extends JFrame {
         inputPanel.add(uEmail = new JTextField());
         inputPanel.setBounds(50, 50, 400, 200);
 
+        // Apply font to all components in input panel
+        setFontAll(inputPanel, myFont);
+
         // Button
         btn = new JButton("Submit");
-        btn.setBounds(190, 300, 100, 50);
+        btn.setFont(myFont);
+        btn.setBounds(190, 300, 120, 50);
 
         // Button response
         btn.addActionListener(new ActionListener() {
@@ -59,6 +64,9 @@ public class Frame extends JFrame {
                 outputPanel.add(new JLabel("Last Name: " + last));
                 outputPanel.add(new JLabel("Email: " + email));
 
+                // Apply font to all output labels automatically
+                setFontAll(outputPanel, myFont);
+
                 outputPanel.setBounds(50, 100, 400, 200);
                 add(outputPanel);
 
@@ -68,7 +76,6 @@ public class Frame extends JFrame {
             }
         });
 
-
         //Elements
         this.add(inputPanel);
         this.add(btn);
@@ -77,7 +84,18 @@ public class Frame extends JFrame {
         this.setVisible(true);
     }
 
+    // Helper method: apply font to all components in a container
+    private void setFontAll(Container c, Font font) {
+        for (Component comp : c.getComponents()) {
+            comp.setFont(font);
+            if (comp instanceof Container) {
+                setFontAll((Container) comp, font); // recursive for nested panels
+            }
+        }
+    }
+
     public static void main(String[] args) {
         new Frame();
     }
 }
+
